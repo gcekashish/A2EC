@@ -1,0 +1,16 @@
+{
+  "name": "a2ec_neo4jdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashish Kulkarni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "neo4j-driver": "^4.2.1",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,18 @@
+﻿<script>
+    // assume that API service is published on same server that is the server of this HTML file
+  // send event to SSE stream 
+  /* "{\"nrs\":[{\"code\":\"FR\",\"name\":\"France\",\"population\":66836154,\"size\":643801,\"continent\":\"Europe\"},{\"code\":\"DE\",\"name\":\"Germany\",\"population\":80722792,\"size\":357022,\"continent\":\"Europe\"},{\"code\":\"FI\",\"name\":\"Finland\",\"population\":5498211,\"size\":338145,\"continent\":\"Europe\"},null]}"
+update all Sse Client with message {"nrs":[{"code":"FR","name":"France","population":66836154,"size":643801,"continent":"Europe"},{"code":"DE","name":"Germany","population":80722792,"size":357022,"continent":"Europe"},{"code":"FI","name":"Finland","population":5498211,"size":338145,"continent":"Europe"},null]}
+*/
+    var source = new EventSource("http://127.0.0.1:3015/topn/updates");
+    source.onmessage = function(event) {
+        var top3 = JSON.parse(event.data);
+        loadMap(top3);       
+    };//onMessage
+  </script> 
+<p><a href="#!/login" class="btn btn-primary logout">Logout</a></p>
+<h3>Hi {{vm.user.firstName}}!</h3>
+<h3 class="panel-title">Devices Monitoring</h3>
+<div class="panel-body rad-map-container">
+    <div id="world-map" class="rad-map"></div>
+</div>
