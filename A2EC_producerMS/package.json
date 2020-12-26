@@ -1,0 +1,17 @@
+{
+  "name": "a2ec_producerms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashish Kulkarni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "kafka-node": "^5.0.0",
+    "kafkajs": "^1.15.0",
+    "request": "^2.88.2"
+  }
+}

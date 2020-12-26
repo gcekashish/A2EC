@@ -1,0 +1,60 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h2>Register</h2>
+    <form name="form" ng-submit="vm.register()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+            <label for="username">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
+            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+            <label for="username">Last name</label>
+            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
+            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="username">Email Address</label>
+            <input type="text" name="email" id="email" class="form-control" ng-model="vm.user.email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email Address is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.dname.$dirty && form.dname.$error.required }">
+            <label for="username">Device Name</label>
+            <input type="text" name="dname" id="dname" class="form-control" ng-model="vm.user.dname" required />
+            <span ng-show="form.dname.$dirty && form.dname.$error.required" class="help-block">Device Name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.dmake.$dirty && form.dmake.$error.required }">
+            <label for="username">Device Make</label>
+            <input type="text" name="dmake" id="dmake" class="form-control" ng-model="vm.user.dmake" required />
+            <span ng-show="form.dmake.$dirty && form.dmake.$error.required" class="help-block">Device Make is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.dsn.$dirty && form.dsn.$error.required }">
+            <label for="username">Device S/N</label>
+            <input type="text" name="dsn" id="dsn" class="form-control" ng-model="vm.user.dsn" required />
+            <span ng-show="form.dsn.$dirty && form.dsn.$error.required" class="help-block">Device S/N is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.dstatus.$dirty && form.dstatus.$error.required }">
+            <label for="username">Device Status</label>
+            <input type="text" name="dstatus" id="dstatus" class="form-control" ng-model="vm.user.dstatus" required />
+            <span ng-show="form.dstatus.$dirty && form.dstatus.$error.required" class="help-block">Device Status is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.dlocation.$dirty && form.dlocation.$error.required }">
+            <label for="username">Device Location</label>
+            <input type="text" name="dlocation" id="dlocation" class="form-control" ng-model="vm.user.dlocation" required />
+            <span ng-show="form.dlocation.$dirty && form.dlocation.$error.required" class="help-block">Device Location is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a href="#!/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

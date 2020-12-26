@@ -1,0 +1,233 @@
+﻿//Vendor prefixes not added
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19-7DRs5.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19a7DRs5.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-1967DRs5.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19G7DRs5.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-1927DRs5.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19y7DRs5.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7DQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+$logo-color:#222533; 
+$base-color: white; 
+$text-color: #515d6e; 
+$font-size:13px;
+
+*{
+    box-sizing:border-box;
+  }
+  
+.h2, h2 {
+    font-size: 35px;
+    font-family: 'Roboto Condensed', "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+  body{
+     line-height:normal;
+    font-size: $font-size + 3;
+      overflow-Y:scroll;
+    font-family: 'Roboto Condensed', "Helvetica Neue",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing: antialiased !important;
+  }
+  
+  .rad-body-wrapper{
+      position:absolute;
+      left:230px;
+      top:75px;
+      width:auto;
+      right:0;
+      transition: all .2s ease-in-out;
+  }
+  
+  .rad-body-wrapper.rad-nav-min{
+      left:10px;
+    right:-10px;
+  }
+  
+  .rad-map{
+      width: 100%;
+      height:100%;
+  }
+  
+  .rad-map-container{
+      height: 400px;
+  }
+  
+  //---------------------------------------------------------
+  //Bootstrap Override
+  //---------------------------------------------------------
+  
+  .panel{
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      border-radius:0 !important;	
+      -webkit-transition:all .2s linear;
+      background:#f6f6f6;
+  }
+  
+  .panel-close{
+      transform:scale3d(0,0,0);
+  }
+  
+  .panel-body{
+      -webkit-transition:all .2s linear;
+      padding: 3px;
+      background: #f5f5f5;
+  }
+  
+  .panel-heading{
+      background: $base-color !important;	
+      border-radius:0;
+      padding:15px;	
+      border-bottom:0 !important;
+  }
+  
+  .panel-heading{
+      text-transform:uppercase;
+      font-weight:600;
+      font-size:$font-size;	
+      color:$text-color;
+      background: #f5f5f5;
+  }
+
+  .logout{
+      margin-left: 90%;
+  }
+  
+  .panel-title{
+      background: #f5f5f5;
+      font-weight:400;
+      font-size:25px;	
+      color:$text-color;
+      text-align:right;
+      font-family: 'Roboto Condensed';
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 0;
+  }
+  
+  .rad-panel-action {
+    list-style: none;
+    display: inline-block;
+    float: right;
+  }
+  
+  .rad-panel-action li {
+    display: inline-block;
+    color: $text-color;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  
+  @each $key, $value in (crimson: crimson, teal: #1fb5ad, orange: #ff503f, purple: rebeccapurple, twitter: #55acee){
+          
+          .rad-bg-#{$key}{
+              background: $value;
+          }
+  
+          .flat-theme.#{$key}{
+              .rad-logo-container{
+                  background: $value !important;
+              }
+  
+              .rad-toggle-btn{
+                  background: darken($value,10) !important;
+              }
+              
+              .rad-dropmenu-footer, 
+              .rad-dropmenu-header{
+                      background: darken($value,10) !important;
+              }
+              
+  
+              .links{	
+                  & > li:not(.no-color){
+                      &:hover{						
+                          >a{
+                              background: lighten($value,5) !important;
+                          }
+                      }
+                  }
+              }
+              
+              .rad-dropmenu-item{
+                  border-color: darken($value,10) !important;
+                  &:before{
+                      border-color: darken($value,10) transparent;
+                  }
+              }
+  
+              .rad-sidebar{
+                  li:hover a>span{
+                      color: $value !important;
+                  }
+              }
+  
+              &.sticky {	
+                  
+                  @media screen and (max-width: 850px){		
+                      .rad-toggle-btn{
+                              background: #fafafa !important;
+                              color:#89949B !important;
+                      }		
+                  }
+                  
+                  .brand-icon,
+                  .rad-toggle-btn:hover{
+                      background: $value !important;
+                      color: #fff !important;
+                  }
+              }
+      }
+  }
+
+a {
+    cursor: pointer;
+}

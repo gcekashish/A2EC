@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Continent and Country Overview</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.4/jquery-jvectormap.min.css'>
+    <link type="text/css" rel="stylesheet" href='style.css'>
+
+    <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js'></script>
+    <script src='https://code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.3/jquery.slimscroll.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.8.0/lodash.min.js'></script>
+    <script src='https://jvectormap.com/js/jquery-jvectormap-2.0.5.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.3/jquery-jvectormap.js'></script>
+    <script src='https://jvectormap.com/js/jquery-jvectormap-world-mill.js'></script>
+    <script src="script.js"></script>
+
+    <script>
+	  // assume that API service is published on same server that is the server of this HTML file
+    // send event to SSE stream 
+    /* "{\"nrs\":[{\"code\":\"FR\",\"name\":\"France\",\"population\":66836154,\"size\":643801,\"continent\":\"Europe\"},{\"code\":\"DE\",\"name\":\"Germany\",\"population\":80722792,\"size\":357022,\"continent\":\"Europe\"},{\"code\":\"FI\",\"name\":\"Finland\",\"population\":5498211,\"size\":338145,\"continent\":\"Europe\"},null]}"
+update all Sse Client with message {"nrs":[{"code":"FR","name":"France","population":66836154,"size":643801,"continent":"Europe"},{"code":"DE","name":"Germany","population":80722792,"size":357022,"continent":"Europe"},{"code":"FI","name":"Finland","population":5498211,"size":338145,"continent":"Europe"},null]}
+*/
+      var source = new EventSource("../topn/updates");
+      source.onmessage = function(event) {
+        var top3 = JSON.parse(event.data);
+        // var meta = top3['meta'];
+        // var operation = meta['operation'];
+        // if (operation == 'created') 
+        // {
+        //   var payload = a['payload'];
+        //   var after = payload['after'];
+        //   var props = after['properties'];
+        //   var country = props['country'];
+        //   var name = props['name'];          
+        // } else if (operation == 'updated') 
+        // {
+        //   var payload = a['payload'];
+          
+        //   var before = payload['before'];
+        //   var propsBfr = before['properties'];
+        //   var countryBfr = propsBfr['country'];
+        //   var nameBfr = propsBfr['name'];
+        //   var bornBfr = propsBfr['born'];
+        //   var cityBfr = propsBfr['city'];
+        //   var areaBfr = propsBfr['area'];
+
+        //   var after = payload['after'];
+        //   var props = after['properties'];
+        //   var country = props['country'];
+        //   var name = props['name'];
+        //   var born = props['born'];
+        //   var city = props['city'];
+        //   var area = props['area'];
+        // } else if (operation == 'deleted') 
+        // {
+          
+        // }
+       // $("h2").html(top3);
+        loadMap(top3);
+      };//onMessage
+      function test () {
+        alert('ashish');
+      }
+    </script>    
+  </head>
+  <div class="rad-body-wrapper rad-nav-min">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel">
+            <h3 class="panel-title">Devices Monitoring   </h3>							
+            <div id="panel-body" class="panel-body rad-map-container">
+              <div id="world-map" class="rad-map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</html>
